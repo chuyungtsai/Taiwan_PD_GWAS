@@ -1,5 +1,5 @@
 ## ================================================================
-## 09_PRS.R
+## 10_PRS.R
 ##
 ## Polygenic Risk Score (PRS) workflow for Taiwan PD GWAS:
 ##   A. Derive Nalls 2019 overlap (76–77 SNPs) with TWB
