@@ -1,64 +1,149 @@
-# 2 GWAS
-# after imputation
-library(glue)
+#!/usr/bin/env Rscript
 
-# run the GWAS in separate chromosomes
-for (i in seq(1,22)){
-  print(i)
-  c0 <- glue('chr{i}_TWB_imputed.fam')
-  if (file.exists(c0)){
-    print('exists!')
-    c1 <- glue("plink2 --bfile chr{i}_imputed --glm 'hide-covar' cols=+a1count,+a1freq --covar 20241119_covariate_PC15.txt --covar-variance-standardize --ci 0.95 --out 20241228_imputed_chr{i}")
-    system(c1)
+## ================================================================
+## GWAS on imputed data (chr1–22) + QQ plot & genomic control
+## - Runs PLINK2 per chromosome using a common covariate file
+## - Merges .glm.logistic.hybrid outputs
+## - Computes λGC and draws QQ plot
+## ================================================================
+
+suppressPackageStartupMessages({
+  library(glue)
+  library(data.table)
+  library(dplyr)
+  library(ggplot2)
+})
+
+## ---------------- USER CONFIGURATION ----------------------------
+
+# PLINK2 binary (assumed in PATH; change if needed)
+plink2_bin <- "plink2"
+
+# Covariate file (PC1–PC15 etc.)
+covar_file <- "20241119_covariate_PC15.txt"
+
+# Base prefix for PLINK2 output (per chromosome)
+out_prefix <- "20241228_imputed_chr"
+
+# Genotype prefix pattern (per chromosome)
+# Expecting files like: chr1_TWB_imputed.{bed,bim,fam}
+bfile_pattern <- "chr{chr}B_imputed"
+
+# Output QQ plot file
+qq_outfile <- "QQplot_lambdaGC.png"
+
+# Chromosomes to run
+chroms <- 1:22
+
+## ================================================================
+## 1. RUN PLINK2 GWAS PER CHROMOSOME
+## ================================================================
+
+for (chr in chroms) {
+  fam_path <- glue("{bfile_pattern}.fam", chr = chr)
+  if (!file.exists(fam_path)) {
+    message("Skip chr", chr, ": FAM not found (", fam_path, ")")
+    next
   }
+  
+  message("Running PLINK2 on chr", chr, "...")
+  
+  cmd <- glue(
+    "{plink2_bin} ",
+    "--bfile {bfile_pattern} ",
+    "--glm hide-covar cols=+a1count,+a1freq ",
+    "--covar {covar_file} ",
+    "--covar-variance-standardize ",
+    "--ci 0.95 ",
+    "--out {out_prefix}{chr}",
+    chr = chr
+  )
+  
+  system(cmd)
 }
 
-# read the results
-result_chr1 <- read.table('imputed_chr1.PHENO1.glm.logistic.hybrid', head=FALSE)
-result_chr2 <- read.table('imputed_chr2.PHENO1.glm.logistic.hybrid', head=FALSE)
-result_chr3 <- read.table('imputed_chr3.PHENO1.glm.logistic.hybrid', head=FALSE)
-result_chr4 <- read.table('imputed_chr4.PHENO1.glm.logistic.hybrid', head=FALSE)
-result_chr5 <- read.table('imputed_chr5.PHENO1.glm.logistic.hybrid', head=FALSE)
-result_chr6 <- read.table('imputed_chr6.PHENO1.glm.logistic.hybrid', head=FALSE)
-result_chr7 <- read.table('imputed_chr7.PHENO1.glm.logistic.hybrid', head=FALSE)
-result_chr8 <- read.table('imputed_chr8.PHENO1.glm.logistic.hybrid', head=FALSE)
-result_chr9 <- read.table('imputed_chr9.PHENO1.glm.logistic.hybrid', head=FALSE)
-result_chr10 <- read.table('imputed_chr10.PHENO1.glm.logistic.hybrid', head=FALSE)
-result_chr11 <- read.table('imputed_chr11.PHENO1.glm.logistic.hybrid', head=FALSE)
-result_chr12 <- read.table('imputed_chr12.PHENO1.glm.logistic.hybrid', head=FALSE)
-result_chr13 <- read.table('imputed_chr13.PHENO1.glm.logistic.hybrid', head=FALSE)
-result_chr14 <- read.table('imputed_chr14.PHENO1.glm.logistic.hybrid', head=FALSE)
-result_chr15 <- read.table('imputed_chr15.PHENO1.glm.logistic.hybrid', head=FALSE)
-result_chr16 <- read.table('imputed_chr16.PHENO1.glm.logistic.hybrid', head=FALSE)
-result_chr17 <- read.table('imputed_chr17.PHENO1.glm.logistic.hybrid', head=FALSE)
-result_chr18 <- read.table('imputed_chr18.PHENO1.glm.logistic.hybrid', head=FALSE)
-result_chr19 <- read.table('imputed_chr19.PHENO1.glm.logistic.hybrid', head=FALSE)
-result_chr20 <- read.table('imputed_chr20.PHENO1.glm.logistic.hybrid', head=FALSE)
-result_chr21 <- read.table('imputed_chr21.PHENO1.glm.logistic.hybrid', head=FALSE)
-result_chr22 <- read.table('imputed_chr22.PHENO1.glm.logistic.hybrid', head=FALSE)
+## ================================================================
+## 2. READ & MERGE PLINK2 OUTPUTS
+## ================================================================
 
-# merge the results
-result_imputed_2 <- rbind(result_chr1, result_chr2, result_chr3, result_chr4, result_chr5, result_chr6, result_chr7, result_chr8, result_chr9, result_chr10, result_chr11, result_chr12, result_chr13, result_chr14, result_chr15, result_chr16, result_chr17, result_chr18, result_chr19, result_chr20, result_chr21, result_chr22)
+gwas_list <- list()
 
-plink_header_2 <- c('CHR', 'BP', 'ID', 'REF', 'ALT', 'A1', 'A1_CT', 'A1_FREQ', 'FIRTH', 'TEST', 'OBS_CT', 'OR', '[LOG(OR)_]SE', 'L95', 'U95', 'STAT', 'P', 'ERRCODE')
-colnames(result_imputed_2) <- plink_header_2
+for (chr in chroms) {
+  f_glm <- glue("{out_prefix}{chr}.PHENO1.glm.logistic.hybrid")
+  if (!file.exists(f_glm)) {
+    message("Result not found for chr", chr, ": ", f_glm)
+    next
+  }
+  
+  dt <- fread(f_glm)
+  
+  # Keep additive model only; drop covariate rows etc.
+  if ("TEST" %in% names(dt)) {
+    dt <- dt[TEST == "ADD"]
+  }
+  
+  # Basic cleaning: drop rows with error codes if ERRCODE is present
+  if ("ERRCODE" %in% names(dt)) {
+    dt <- dt[is.na(ERRCODE) | ERRCODE == "NO_ERROR"]
+  }
+  
+  # Standardize chromosome / position column names if using PLINK2 defaults
+  if ("#CHROM" %in% names(dt)) setnames(dt, "#CHROM", "CHR")
+  if ("POS"    %in% names(dt)) setnames(dt, "POS",    "BP")
+  
+  # Add chr if missing (some PLINK versions have CHR, some #CHROM)
+  if (!"CHR" %in% names(dt)) {
+    dt[, CHR := chr]
+  }
+  
+  gwas_list[[as.character(chr)]] <- dt
+}
 
-### qqplot and genomic control
-library(ggplot2)
+if (length(gwas_list) == 0L) {
+  stop("No GWAS result files were found. Check paths and PLINK output.")
+}
 
-# Suppose you already have your GWAS p-values
-pvals <- result_imputed_2$P
+gwas_all <- rbindlist(gwas_list, use.names = TRUE, fill = TRUE)
+
+# Optional: reorder columns (if they exist) for clarity
+col_order <- c(
+  "CHR", "BP", "ID", "REF", "ALT", "A1",
+  "A1_CT", "A1_FREQ", "OBS_CT",
+  "OR", "SE", "L95", "U95", "Z_STAT", "STAT", "P",
+  "TEST", "FIRTH", "ERRCODE"
+)
+col_order <- intersect(col_order, names(gwas_all))
+setcolorder(gwas_all, c(col_order, setdiff(names(gwas_all), col_order)))
+
+# Save merged GWAS table (tab-delimited)
+fwrite(gwas_all, "20241228_GWAS_imputed_allchr.tsv", sep = "\t")
+
+## ================================================================
+## 3. GENOMIC CONTROL (λGC) & QQ PLOT
+## ================================================================
+
+# Extract valid p-values
+pvals <- gwas_all$P
 pvals <- pvals[is.finite(pvals) & pvals > 0 & pvals <= 1]
 
-# Compute λGC
-chi2 <- qchisq(1 - pvals, df = 1)
-lambda_gc <- median(chi2, na.rm = TRUE) / 0.4559364
-lambda_gc 
+if (length(pvals) < 1000) {
+  warning("Fewer than 1000 P-values after filtering; QQ plot may be unstable.")
+}
 
-# Create QQ plot
+# λGC: median(χ²)/median(χ² under null)
+chi2       <- qchisq(1 - pvals, df = 1)
+lambda_gc  <- median(chi2, na.rm = TRUE) / qchisq(0.5, df = 1)
+
+message(sprintf("Genomic control λGC = %.3f", lambda_gc))
+
+# QQ data
+p_sorted <- sort(pvals)
+exp_vals <- -log10((seq_along(p_sorted)) / (length(p_sorted) + 1))
+obs_vals <- -log10(p_sorted)
+
 qq_df <- data.frame(
-  exp = -log10((1:length(pvals)) / (length(pvals) + 1)),
-  obs = -log10(sort(pvals))
+  exp = exp_vals,
+  obs = obs_vals
 )
 
 qq_plot <- ggplot(qq_df, aes(x = exp, y = obs)) +
@@ -66,13 +151,20 @@ qq_plot <- ggplot(qq_df, aes(x = exp, y = obs)) +
   geom_point(size = 0.8, color = "navy", alpha = 0.6) +
   labs(
     title = sprintf("QQ Plot of GWAS P-values (λGC = %.3f)", lambda_gc),
-    x = "Expected -log10(P)",
-    y = "Observed -log10(P)"
+    x     = "Expected -log10(P)",
+    y     = "Observed -log10(P)"
   ) +
   theme_bw(base_size = 12)
 
-# Output to JPG
-jpeg("QQplot_lambdaGC.jpg", width = 1200, height = 1200, res = 150)
-print(qq_plot)
-dev.off()
+ggsave(
+  filename = qq_outfile,
+  plot     = qq_plot,
+  width    = 6,
+  height   = 6,
+  dpi      = 300
+)
 
+message("Done:
+  - Merged GWAS: 20241228_GWAS_imputed_allchr.tsv
+  - QQ plot:     ", qq_outfile,
+        "\n  - λGC:       ", sprintf('%.3f', lambda_gc))
