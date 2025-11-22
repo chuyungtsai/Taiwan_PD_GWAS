@@ -1,7 +1,6 @@
-#!/usr/bin/env Rscript
 
 ## ================================================================
-## 06a_1000G_TW_projection.R
+## 07a_1000G_TW_projection.R
 ## 1000 Genomes + Taiwan PCA projection 
 ## Produces:
 ##   - 20251019_TW_1000G_PCA.jpeg
