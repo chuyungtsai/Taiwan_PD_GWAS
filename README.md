@@ -12,6 +12,8 @@ All data used in this repository were generated using GP2-funded resources from 
 - [EAPDGC](https://www.thelancet.com/journals/laneur/article/PIIS1474-4422(21)00373-2/fulltext)
 - [GP2 website](https://gp2.org/)
   - [Introduction to GP2](https://movementdisorders.onlinelibrary.wiley.com/doi/10.1002/mds.28494)
+- [Taiwan Biobank Imputation Server] (https://twbimpute.biobank.org.tw/index.html)
+  - [Taiwan Biobank: A rich biomedical research database of the Taiwanese population](https://www.sciencedirect.com/science/article/pii/S2666979X2200146X)
 
 ## Citation
 (pending pubication)
