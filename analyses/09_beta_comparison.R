@@ -1,5 +1,5 @@
 ## ================================================================
-## 08_beta_comparison.R
+## 09_beta_comparison.R
 ##
 ## Compare Taiwan PD GWAS effect sizes with:
 ##   - Nalls et al. 2019 (European PD GWAS)
