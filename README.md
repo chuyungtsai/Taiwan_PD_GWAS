@@ -32,10 +32,11 @@ The analysis/ directory includes all analyses discussed in the manuscript.
   |     ├── 01_QC.R
   |     ├── 02_GWAS.R
   |     ├── 03_regional_plot.R
-  |     ├── 04_haplotype.R
-  |     ├── 05_LRRK2.R
-  |     ├── 06_beta_comparison.R
-  |     └── 07_PRS.R
+  |     ├── 04_manhattan.R
+  |     ├── 05_haplotype.R
+  |     ├── 06_LRRK2.R
+  |     ├── 07_beta_comparison.R
+  |     └── 08_PRS.R
   ├── figures/
   |     └── 00_workflow.png
   ├── tables/
@@ -50,12 +51,13 @@ Languages: R
 | Directory |        Notebooks     |     Description     | 
 |-----------|----------------------|---------------------|
 |`analyses/`| `01_QC.R`  | Quality Control, the starting genotype data are in PLINK format, converted from IDAT files using GenomeStudio.|
-|`analyses/`| `02_GWAS.R`  | After imputation, GWAS and Logistic Regression and related figures|
-|`analyses/`| `03_regional_plot.R`  | regional_plots |
-|`analyses/`| `04_haplotype.R`  | SNCA and LRRK2 haplotype staistics and figures|
-|`analyses/`| `05_LRRK2.R`  | analysis based on LRRK2 Asian variant status |
-|`analyses/`| `06_beta_comparison.R`  | compare with past GWAS and generate beta-beta plot |
-|`analyses/`| `07_PRS.R`  | polygenic risk score |
+|`analyses/`| `02_GWAS.R`  | After imputation, perform GWAS using PLINK2|
+|`analyses/`| `03_manhattan.R`  | Generate Manhattan plot|
+|`analyses/`| `04_regional_plot.R`  | regional_plots |
+|`analyses/`| `05_haplotype.R`  | SNCA and LRRK2 haplotype staistics and figures|
+|`analyses/`| `06_LRRK2.R`  | analysis based on LRRK2 Asian variant status |
+|`analyses/`| `07_beta_comparison.R`  | compare with past GWAS and generate beta-beta plot |
+|`analyses/`| `08_PRS.R`  | polygenic risk score |
 
 
 ## Software/Packages
@@ -63,7 +65,7 @@ Languages: R
 | Software	| Version(s)	| Resource URL |  Notes |
 |-----------|----------------------|---------------------|------|
 |`Genome Studio`|`2.0`|https://www.illumina.com/products/by-type/informatics-products/microarray-software/genomestudio.html||
-|`PILNK`| `2.0`  | [https://www.cog-genomics.org/plink/2.0/](https://www.cog-genomics.org/plink/2.0/) ||
-|`PILNK`| `1.9`  | [https://www.cog-genomics.org/plink/2.0/](https://www.cog-genomics.org/plink/)||
-|`R Project for Statistical Computing`| `4.3`  | [https://www.r-project.org/](https://www.r-project.org/) | dplyr; tidyr; ggplot; data.table; used for general data processing/plotting/analyses|
-|`haplo.stats (R)`|`1.9.7`| [https://cran.r-project.org/web/packages/haplo.stats/index.html](https://cran.r-project.org/web/packages/haplo.stats/index.html) ||
+|`PILNK`| `2.0`  | https://www.cog-genomics.org/plink/2.0/ ||
+|`PILNK`| `1.9`  | https://www.cog-genomics.org/plink/||
+|`R Project for Statistical Computing`| `4.3`  | https://www.r-project.org/ | dplyr; tidyr; ggplot; data.table; used for general data processing/plotting/analyses|
+|`haplo.stats (R)`|`1.9.7`| https://cran.r-project.org/web/packages/haplo.stats/index.html ||
