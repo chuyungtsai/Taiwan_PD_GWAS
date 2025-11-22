@@ -32,8 +32,8 @@ The analysis/ directory includes all analyses discussed in the manuscript.
   ├── analyses/ 
   |     ├── 01_QC.R
   |     ├── 02_GWAS.R
-  |     ├── 03_regional_plot.R
-  |     ├── 04_manhattan.R
+  |     ├── 03_manhattan.R
+  |     ├── 04_regional_plot.R
   |     ├── 05_haplotype.R
   |     ├── 06_LRRK2.R
   |     ├── 07_beta_comparison.R
