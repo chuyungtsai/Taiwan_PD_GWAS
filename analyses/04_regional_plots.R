@@ -1,8 +1,6 @@
 # 4. regional plots
 # use SNCA as example. 
 
-#!/usr/bin/env Rscript
-
 ## ================================================================
 ## LocusZoom-style regional plot with gene track (SNCA example)
 ## - Uses PLINK 1.9 LD output and PLINK2 summary statistics
