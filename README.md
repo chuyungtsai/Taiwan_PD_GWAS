@@ -46,5 +46,10 @@ Languages: R
 |`analyses/`| `01_notebook.ipynb`  | Logistic Regression|
 |`analyses/`| `01_notebook.ipynb`  | Logistic Regression|
 
+## Software
 
-Output:
+| Software	| Version(s)	| Resource URL | 
+|-----------|----------------------|---------------------|
+|`PILNK`| `2.0`  | (https://www.cog-genomics.org/plink/2.0/)[https://www.cog-genomics.org/plink/2.0/] |
+|`PILNK`| `1.9`  | [https://www.cog-genomics.org/plink/2.0/](https://www.cog-genomics.org/plink/)|
+|`analyses/`| `01_notebook.ipynb`  | Analysis description|
