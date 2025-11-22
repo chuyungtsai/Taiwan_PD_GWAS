@@ -42,9 +42,11 @@ Languages: R
 
 | Directory |        Notebooks     |     Description     | 
 |-----------|----------------------|---------------------|
-|`analyses/`| `00_notebook.R`  | Quality Control|
-|`analyses/`| `01_notebook.ipynb`  | Logistic Regression|
-|`analyses/`| `01_notebook.ipynb`  | Logistic Regression|
+|`analyses/`| `01_QC.R`  | Quality Control|
+|`analyses/`| `02_GWAS.R`  | GWAS and Logistic Regression and related figures|
+|`analyses/`| `03_haplotype.R`  | haplotype staistics and figures|
+|`analyses/`| `04_beta_comparison.R`  | beta-beta plot |
+|`analyses/`| `05_PRS.R`  | polygenic risk score |
 
 ## Software
 
