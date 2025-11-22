@@ -50,6 +50,8 @@ Languages: R
 |`analyses/`| `06_beta_comparison.R`  | beta-beta plot |
 |`analyses/`| `07_PRS.R`  | polygenic risk score |
 
+P.S. Please note that the starting genotype data are in PLINK format, converted from IDAT files using GenomeStudio.
+
 ## Software/Packages
 
 | Software	| Version(s)	| Resource URL |  Notes |
