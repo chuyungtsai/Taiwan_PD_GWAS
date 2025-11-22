@@ -54,6 +54,7 @@ Languages: R
 
 | Software	| Version(s)	| Resource URL | 
 |-----------|----------------------|---------------------|
+|`Genome Studio`|`2.0`|[https://www.illumina.com/products/by-type/informatics-products/microarray-software/genomestudio.html](https://www.illumina.com/products/by-type/informatics-products/microarray-software/genomestudio.html)|
 |`PILNK`| `2.0`  | [https://www.cog-genomics.org/plink/2.0/](https://www.cog-genomics.org/plink/2.0/) |
 |`PILNK`| `1.9`  | [https://www.cog-genomics.org/plink/2.0/](https://www.cog-genomics.org/plink/)|
 |`R Project for Statistical Computing`| `4.3`  | [https://www.r-project.org/](https://www.r-project.org/) |
