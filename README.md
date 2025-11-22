@@ -52,10 +52,10 @@ Languages: R
 
 ## Software/Packages
 
-| Software	| Version(s)	| Resource URL | 
-|-----------|----------------------|---------------------|
-|`Genome Studio`|`2.0`|[https://www.illumina.com/products/by-type/informatics-products/microarray-software/genomestudio.html](https://www.illumina.com/products/by-type/informatics-products/microarray-software/genomestudio.html)|
-|`PILNK`| `2.0`  | [https://www.cog-genomics.org/plink/2.0/](https://www.cog-genomics.org/plink/2.0/) |
-|`PILNK`| `1.9`  | [https://www.cog-genomics.org/plink/2.0/](https://www.cog-genomics.org/plink/)|
-|`R Project for Statistical Computing`| `4.3`  | [https://www.r-project.org/](https://www.r-project.org/) |
-|`R haplo.stats`|`1.9.7`| [https://cran.r-project.org/web/packages/haplo.stats/index.html](https://cran.r-project.org/web/packages/haplo.stats/index.html) |
+| Software	| Version(s)	| Resource URL |  Notes |
+|-----------|----------------------|---------------------|------|
+|`Genome Studio`|`2.0`|[https://www.illumina.com/products/by-type/informatics-products/microarray-software/genomestudio.html](https://www.illumina.com/products/by-type/informatics-products/microarray-software/genomestudio.html)||
+|`PILNK`| `2.0`  | [https://www.cog-genomics.org/plink/2.0/](https://www.cog-genomics.org/plink/2.0/) ||
+|`PILNK`| `1.9`  | [https://www.cog-genomics.org/plink/2.0/](https://www.cog-genomics.org/plink/)||
+|`R Project for Statistical Computing`| `4.3`  | [https://www.r-project.org/](https://www.r-project.org/) | dplyr; tidyr; ggplot; data.table; used for general data processing/plotting/analyses|
+|`haplo.stats (R)`|`1.9.7`| [https://cran.r-project.org/web/packages/haplo.stats/index.html](https://cran.r-project.org/web/packages/haplo.stats/index.html) ||
