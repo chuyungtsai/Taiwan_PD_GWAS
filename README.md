@@ -27,10 +27,15 @@ The analysis/ directory includes all analyses discussed in the manuscript.
 
 <pre> THIS_REPO/ 
   ├── analyses/ 
-  |     ├── 00_notebook.ipynb
-  |     └── 01_notebook.ipynb
+  |     ├── 01_QC.R
+  |     ├── 02_GWAS.R
+  |     ├── 03_regional_plot.R
+  |     ├── 04_haplotype.R
+  |     ├── 05_LRRK2.R
+  |     ├── 06_beta_comparison.R
+  |     └── 07_PRS.R
   ├── figures/
-  |     └── 00_figure.png
+  |     └── 00_workflow.png
   ├── tables/
   |     └── 00_table.csv
   ├── LICENSE
@@ -42,15 +47,14 @@ Languages: R
 
 | Directory |        Notebooks     |     Description     | 
 |-----------|----------------------|---------------------|
-|`analyses/`| `01_QC.R`  | Quality Control|
-|`analyses/`| `02_GWAS.R`  | GWAS and Logistic Regression and related figures|
+|`analyses/`| `01_QC.R`  | Quality Control, the starting genotype data are in PLINK format, converted from IDAT files using GenomeStudio.|
+|`analyses/`| `02_GWAS.R`  | After imputation, GWAS and Logistic Regression and related figures|
 |`analyses/`| `03_regional_plot.R`  | regional_plots |
 |`analyses/`| `04_haplotype.R`  | SNCA and LRRK2 haplotype staistics and figures|
 |`analyses/`| `05_LRRK2.R`  | analysis based on LRRK2 Asian variant status |
-|`analyses/`| `06_beta_comparison.R`  | beta-beta plot |
+|`analyses/`| `06_beta_comparison.R`  | compare with past GWAS and generate beta-beta plot |
 |`analyses/`| `07_PRS.R`  | polygenic risk score |
 
-P.S. Please note that the starting genotype data are in PLINK format, converted from IDAT files using GenomeStudio.
 
 ## Software/Packages
 
