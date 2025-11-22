@@ -1,5 +1,5 @@
 ## ================================================================
-## 07_LRRK2_analysis.R
+## 08_LRRK2_analysis.R
 ##
 ## Taiwan PD GWAS – LRRK2 Asian variants (G2385R, R1628P)
 ## 1) Extract LRRK2 genotypes from PLINK (0/1/2)
