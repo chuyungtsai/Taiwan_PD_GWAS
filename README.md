@@ -30,7 +30,7 @@ The analysis/ directory includes all analyses discussed in the manuscript.
 
 <pre> THIS_REPO/ 
   ├── analyses/ 
-  |     ├── 01_QC.R
+  |     ├── 01_QC_PCA.R
   |     ├── 02_GWAS.R
   |     ├── 03_manhattan.R
   |     ├── 04_regional_plot.R
@@ -51,7 +51,7 @@ Languages: R
 
 | Directory |        Notebooks     |     Description     | 
 |-----------|----------------------|---------------------|
-|`analyses/`| `01_QC.R`  | Quality Control, the starting genotype data are in PLINK format, converted from IDAT files using GenomeStudio.|
+|`analyses/`| `01_QC_PCA.R`  | Quality Control and PCA, the starting genotype data are in PLINK format, converted from IDAT files using GenomeStudio. |
 |`analyses/`| `02_GWAS.R`  | After imputation, perform GWAS using PLINK2|
 |`analyses/`| `03_manhattan.R`  | Generate Manhattan plot|
 |`analyses/`| `04_regional_plot.R`  | regional_plots |
