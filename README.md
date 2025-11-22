@@ -67,10 +67,9 @@ Languages: R
 
 ## Software/Packages
 
-| Software	| Version(s)	| Resource URL |  Notes |
-|-----------|----------------------|---------------------|------|
-|`Genome Studio`|`2.0`|https://www.illumina.com/products/by-type/informatics-products/microarray-software/genomestudio.html||
-|`PILNK`| `2.0`  | https://www.cog-genomics.org/plink/2.0/ ||
-|`PILNK`| `1.9`  | https://www.cog-genomics.org/plink/||
-|`R Project for Statistical Computing`| `4.3`  | https://www.r-project.org/ | dplyr; tidyr; ggplot; data.table; used for general data processing/plotting/analyses|
-|`haplo.stats (R)`|`1.9.7`| https://cran.r-project.org/web/packages/haplo.stats/index.html ||
+| Software	| Version(s)	| Resource URL |RRID|  Notes |
+|-----------|----------------------|------------|---------|------|
+|`Genome Studio`|`2.0`|https://www.illumina.com/products/by-type/informatics-products/microarray-software/genomestudio.html|SCR_010973||
+|`PILNK`| `2.0`  | https://www.cog-genomics.org/plink/2.0/ |SCR_001757||
+|`PILNK`| `1.9`  | https://www.cog-genomics.org/plink/||SCR_001757||
+|`R Project for Statistical Computing`| `4.3`  | https://www.r-project.org/ |SCR_001905| dplyr; tidyr; ggplot; data.table; haplo.stats; used for general data processing/plotting/analyses|
