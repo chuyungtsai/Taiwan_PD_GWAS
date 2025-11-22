@@ -59,12 +59,13 @@ Languages: R
 |`analyses/`| `02_GWAS.R`  | After imputation, perform GWAS using PLINK2|
 |`analyses/`| `03_manhattan.R`  | Generate Manhattan plot|
 |`analyses/`| `04_regional_plot.R`  | regional_plots |
-|`analyses/`| `05_haplotype.R`  | SNCA and LRRK2 haplotype staistics and figures|
-|`analyses/`| `06a_1000G_TW_projection.R`  | 1000 genome ancestry projection |
-|`analyses/`| `06b_1000G_TW_LRRK2_PCA.R`  | East Asian + Taiwan PCA with LRRK2 carriers highlighted |
-|`analyses/`| `07_LRRK2.R`  | analysis based on LRRK2 Asian variant status |
-|`analyses/`| `08_beta_comparison.R`  | compare with past GWAS and generate beta-beta plot |
-|`analyses/`| `09_PRS.R`  | polygenic risk score |
+|`analyses/`| `05_SNCA_conditional.R`  | SNCA conditinoal analysis |
+|`analyses/`| `06_haplotype.R`  | SNCA and LRRK2 haplotype staistics and figures|
+|`analyses/`| `07a_1000G_TW_projection.R`  | 1000 genome ancestry projection |
+|`analyses/`| `07b_1000G_TW_LRRK2_PCA.R`  | East Asian + Taiwan PCA with LRRK2 carriers highlighted |
+|`analyses/`| `08_LRRK2.R`  | analysis based on LRRK2 Asian variant status |
+|`analyses/`| `09_beta_comparison.R`  | compare with past GWAS and generate beta-beta plot |
+|`analyses/`| `10_PRS.R`  | polygenic risk score |
 
 
 ## Software/Packages
