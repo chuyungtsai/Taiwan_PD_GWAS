@@ -41,7 +41,7 @@ The analysis/ directory includes all analyses discussed in the manuscript.
   |     ├── 07b_1000G_TW_LRRK2_PCA.R
   |     ├── 08_LRRK2.R
   |     ├── 09_beta_comparison.R
-  |     └── 010_PRS.R
+  |     └── 10_PRS.R
   ├── figures/
   |     └── 00_workflow.png
   ├── tables/
