@@ -35,7 +35,8 @@ The analysis/ directory includes all analyses discussed in the manuscript.
   |     ├── 03_manhattan.R
   |     ├── 04_regional_plot.R
   |     ├── 05_haplotype.R
-  |     ├── 06_1000G.R
+  |     ├── 06a_1000G_TW_projection.R
+  |     ├── 06b_1000G_TW_LRRK2_PCA.R
   |     ├── 07_LRRK2.R
   |     ├── 08_beta_comparison.R
   |     └── 09_PRS.R
@@ -57,7 +58,8 @@ Languages: R
 |`analyses/`| `03_manhattan.R`  | Generate Manhattan plot|
 |`analyses/`| `04_regional_plot.R`  | regional_plots |
 |`analyses/`| `05_haplotype.R`  | SNCA and LRRK2 haplotype staistics and figures|
-|`analyses/`| `06_1000G.R`  | 1000 genome ancestry projection |
+|`analyses/`| `06a_1000G_TW_projection.R`  | 1000 genome ancestry projection |
+|`analyses/`| `06b_1000G_TW_LRRK2_PCA.R`  | East Asian + Taiwan PCA with LRRK2 carriers highlighted |
 |`analyses/`| `07_LRRK2.R`  | analysis based on LRRK2 Asian variant status |
 |`analyses/`| `08_beta_comparison.R`  | compare with past GWAS and generate beta-beta plot |
 |`analyses/`| `09_PRS.R`  | polygenic risk score |
