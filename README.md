@@ -35,12 +35,13 @@ The analysis/ directory includes all analyses discussed in the manuscript.
   |     ├── 02_GWAS.R
   |     ├── 03_manhattan.R
   |     ├── 04_regional_plot.R
-  |     ├── 05_haplotype.R
-  |     ├── 06a_1000G_TW_projection.R
-  |     ├── 06b_1000G_TW_LRRK2_PCA.R
-  |     ├── 07_LRRK2.R
-  |     ├── 08_beta_comparison.R
-  |     └── 09_PRS.R
+  |     ├── 05_SNCA_conditional.R
+  |     ├── 06_haplotype.R
+  |     ├── 07a_1000G_TW_projection.R
+  |     ├── 07b_1000G_TW_LRRK2_PCA.R
+  |     ├── 08_LRRK2.R
+  |     ├── 09_beta_comparison.R
+  |     └── 010_PRS.R
   ├── figures/
   |     └── 00_workflow.png
   ├── tables/
