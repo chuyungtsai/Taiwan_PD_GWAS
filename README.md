@@ -51,28 +51,28 @@ The analysis/ directory includes all analyses discussed in the manuscript.
 </pre>
 
 ## Analysis Scripts
-Languages: R
+Primary language: R
 
-| Directory |        Notebooks     |     Description     | 
-|-----------|----------------------|---------------------|
-|`analyses/`| `01_QC_PCA.R`  | Quality Control and PCA, the starting genotype data are in PLINK format, converted from IDAT files using GenomeStudio. |
-|`analyses/`| `02_GWAS.R`  | After imputation, perform GWAS using PLINK2|
-|`analyses/`| `03_manhattan.R`  | Generate Manhattan plot|
-|`analyses/`| `04_regional_plot.R`  | regional_plots |
-|`analyses/`| `05_SNCA_conditional.R`  | SNCA conditinoal analysis |
-|`analyses/`| `06_haplotype.R`  | SNCA and LRRK2 haplotype staistics and figures|
-|`analyses/`| `07a_1000G_TW_projection.R`  | 1000 genome ancestry projection |
-|`analyses/`| `07b_1000G_TW_LRRK2_PCA.R`  | East Asian + Taiwan PCA with LRRK2 carriers highlighted |
-|`analyses/`| `08_LRRK2.R`  | analysis based on LRRK2 Asian variant status |
-|`analyses/`| `09_beta_comparison.R`  | compare with past GWAS and generate beta-beta plot |
-|`analyses/`| `10_PRS.R`  | polygenic risk score |
+| Directory   | Script                        | Description                                                                 |
+|------------|-------------------------------|-----------------------------------------------------------------------------|
+| `analyses/`| `01_QC_PCA.R`                 | Genotyping QC and principal component analysis. Input genotypes are PLINK files converted from IDAT via Illumina GenomeStudio. |
+| `analyses/`| `02_GWAS.R`                   | Genome-wide association analysis using imputed data and PLINK 2.0.         |
+| `analyses/`| `03_manhattan.R`              | Generation of Manhattan and QQ plots for GWAS results.                      |
+| `analyses/`| `04_regional_plot.R`          | LocusZoom-style regional association plots for key loci.                    |
+| `analyses/`| `05_SNCA_conditional.R`       | Conditional association analyses at the SNCA locus and regional plots.     |
+| `analyses/`| `06_haplotype.R`              | Haplotype estimation and visualization for SNCA and LRRK2.                  |
+| `analyses/`| `07a_1000G_TW_projection.R`   | PCA-based ancestry projection using 1000 Genomes and the Taiwan cohort.     |
+| `analyses/`| `07b_1000G_TW_LRRK2_PCA.R`    | East Asian + Taiwan PCA with LRRK2 variant carriers highlighted.            |
+| `analyses/`| `08_LRRK2.R`                  | Case–control and age-at-onset analyses stratified by LRRK2 Asian variants.  |
+| `analyses/`| `09_beta_comparison.R`        | Effect size comparison with prior PD GWAS (e.g., Nalls 2019, Foo 2020) and beta–beta plots. |
+| `analyses/`| `10_PRS.R`                    | Construction and evaluation of polygenic risk scores (AUC, ROC, deciles).   |
 
 
-## Software/Packages
+## Software / Packages
 
-| Software	| Version(s)	| Resource URL |RRID|  Notes |
-|-----------|----------------------|------------|---------|------|
-|`Genome Studio`|`2.0`|https://www.illumina.com/products/by-type/informatics-products/microarray-software/genomestudio.html|SCR_010973||
-|`PILNK`| `2.0`  | https://www.cog-genomics.org/plink/2.0/ |SCR_001757||
-|`PILNK`| `1.9`  | https://www.cog-genomics.org/plink/||SCR_001757||
-|`R Project for Statistical Computing`| `4.3`  | https://www.r-project.org/ |SCR_001905| dplyr; tidyr; ggplot; data.table; haplo.stats; used for general data processing/plotting/analyses|
+| Software                               | Version(s) | Resource URL                                                                 | RRID        | Notes |
+|----------------------------------------|------------|------------------------------------------------------------------------------|-------------|-------|
+| `GenomeStudio`                         | 2.0        | https://www.illumina.com/products/by-type/informatics-products/microarray-software/genomestudio.html | SCR_010973 | Used to convert IDAT intensity files to PLINK-formatted genotype data. |
+| `PLINK`                                | 2.0        | https://www.cog-genomics.org/plink/2.0/                                     | SCR_001757 | Used for GWAS, scoring (PRS), and basic genotype processing. |
+| `PLINK`                                | 1.9        | https://www.cog-genomics.org/plink/                                         | SCR_001757 | Used for LD calculations, pruning, IBD, and legacy QC steps. |
+| `R Project for Statistical Computing`  | 4.3        | https://www.r-project.org/                                                  | SCR_001905 | Used for downstream analyses and visualization. Key packages include: `dplyr`, `tidyr`, `data.table`, `ggplot2`, `haplo.stats`, `geneHapR`, `pROC`, and `patchwork`. |
