@@ -54,7 +54,7 @@ Languages: R
 
 | Software	| Version(s)	| Resource URL | 
 |-----------|----------------------|---------------------|
-|`PILNK`| `2.0`  | (https://www.cog-genomics.org/plink/2.0/)[https://www.cog-genomics.org/plink/2.0/] |
+|`PILNK`| `2.0`  | [https://www.cog-genomics.org/plink/2.0/](https://www.cog-genomics.org/plink/2.0/) |
 |`PILNK`| `1.9`  | [https://www.cog-genomics.org/plink/2.0/](https://www.cog-genomics.org/plink/)|
-|`R Project for Statistical Computing`| `4.3`  | (https://www.r-project.org/)[https://www.r-project.org/] |
-|`R haplo.stats`|`1.9.7`| (https://cran.r-project.org/web/packages/haplo.stats/index.html)[https://cran.r-project.org/web/packages/haplo.stats/index.html] |
+|`R Project for Statistical Computing`| `4.3`  | [https://www.r-project.org/](https://www.r-project.org/) |
+|`R haplo.stats`|`1.9.7`| [https://cran.r-project.org/web/packages/haplo.stats/index.html](https://cran.r-project.org/web/packages/haplo.stats/index.html) |
