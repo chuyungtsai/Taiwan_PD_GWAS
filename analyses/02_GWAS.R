@@ -1,3 +1,4 @@
+2. GWAS using imputed data
 ## ================================================================
 ## GWAS on imputed data (chr1–22) + QQ plot & genomic control
 ## - Runs PLINK2 per chromosome using a common covariate file
