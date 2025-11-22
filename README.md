@@ -44,14 +44,17 @@ Languages: R
 |-----------|----------------------|---------------------|
 |`analyses/`| `01_QC.R`  | Quality Control|
 |`analyses/`| `02_GWAS.R`  | GWAS and Logistic Regression and related figures|
-|`analyses/`| `03_haplotype.R`  | haplotype staistics and figures|
-|`analyses/`| `04_beta_comparison.R`  | beta-beta plot |
-|`analyses/`| `05_PRS.R`  | polygenic risk score |
+|`analyses/`| `03_regional_plot.R`  | regional_plots |
+|`analyses/`| `04_haplotype.R`  | SNCA and LRRK2 haplotype staistics and figures|
+|`analyses/`| `05_LRRK2.R`  | analysis based on LRRK2 Asian variant status |
+|`analyses/`| `06_beta_comparison.R`  | beta-beta plot |
+|`analyses/`| `07_PRS.R`  | polygenic risk score |
 
-## Software
+## Software/Packages
 
 | Software	| Version(s)	| Resource URL | 
 |-----------|----------------------|---------------------|
 |`PILNK`| `2.0`  | (https://www.cog-genomics.org/plink/2.0/)[https://www.cog-genomics.org/plink/2.0/] |
 |`PILNK`| `1.9`  | [https://www.cog-genomics.org/plink/2.0/](https://www.cog-genomics.org/plink/)|
-|`analyses/`| `01_notebook.ipynb`  | Analysis description|
+|`R Project for Statistical Computing`| `4.3`  | (https://www.r-project.org/)[https://www.r-project.org/] |
+|`R haplo.stats`|`1.9.7`| (https://cran.r-project.org/web/packages/haplo.stats/index.html)[https://cran.r-project.org/web/packages/haplo.stats/index.html] |
