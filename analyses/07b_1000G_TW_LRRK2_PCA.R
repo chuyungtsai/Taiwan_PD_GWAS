@@ -1,5 +1,5 @@
 ## ================================================================
-## 06b_1000G_TW_LRRK2_PCA.R
+## 07b_1000G_TW_LRRK2_PCA.R
 ## East Asian + Taiwan PCA  with LRRK2 carriers highlighted
 ## Produces:
 ##   - 20251019_LRRK2_EAS_TW.jpeg
