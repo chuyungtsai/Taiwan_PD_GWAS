@@ -3,7 +3,8 @@ GP2 ❤️ Open Science 😍
 Last Updated: November 2025
 
 ## Summary
-This is the online repository for the manuscript titled "Genome-Wide Association and Population-Tailored Polygenic Risk for Parkinson’s Disease in Taiwan". This study represents the first and largest genome-wide assessment of Parkinson’s disease in the Taiwanese populations.
+This repository accompanies the manuscript **“Genome-Wide Association and Population-Tailored Polygenic Risk for Parkinson’s Disease in Taiwan.”** It contains analysis scripts and summary resources for the first and largest genome-wide investigation of Parkinson’s disease in Taiwanese populations. Genotype imputation was performed using the [Taiwan Biobank Imputation Server](https://twbimpute.biobank.org.tw/index.html), leveraging a population-specific whole-genome reference panel to optimize variant coverage and accuracy.
+
 
 ## Data Statement
 All data used in this repository were generated using GP2-funded resources from the East Asian Parkinson’s Disease Genomics Consortium (EAPDGC), as part of the Global Parkinson’s Genetics Program (GP2). The underlying genotype and phenotype data are not distributed through this repository and can be accessed upon reasonable request to the EAPDGC/GP2 data access committees, in accordance with their data-sharing policies.
