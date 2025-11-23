@@ -7,7 +7,7 @@ This repository accompanies the manuscript **“Genome-Wide Association and Popu
 
 
 ## Data Statement
-All data used in this repository were generated using GP2-funded resources from the East Asian Parkinson’s Disease Genomics Consortium (EAPDGC), as part of the Global Parkinson’s Genetics Program (GP2). The underlying genotype and phenotype data are not distributed through this repository and can be accessed upon reasonable request to the EAPDGC/GP2 data access committees, in accordance with their data-sharing policies.
+All data used in this repository were generated using GP2-funded resources from the East Asian Parkinson’s Disease Genomics Consortium (EAPDGC), as part of the Global Parkinson’s Genetics Program (GP2). Access to the individual-level data used in this article is coordinated by the corresponding authors and governed by the GP2 Tier 2 data access policy. Data access may be granted upon reasonable request, subject to approval and a Data Use Agreement signed by the applicant’s institution.
 
 ### Helpful links
 - [EAPDGC](https://www.thelancet.com/journals/laneur/article/PIIS1474-4422(21)00373-2/fulltext)
