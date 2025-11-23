@@ -43,9 +43,7 @@ The analysis/ directory includes all analyses discussed in the manuscript.
   |     ├── 09_beta_comparison.R
   |     └── 10_PRS.R
   ├── figures/
-  |     └── 00_workflow.png
   ├── tables/
-  |     └── 00_table.csv
   ├── LICENSE
   └── README.md 
 </pre>
@@ -57,7 +55,7 @@ Primary language: R
 |------------|-------------------------------|-----------------------------------------------------------------------------|
 | `analyses/`| `01_QC_PCA.R`                 | Genotyping QC and principal component analysis. Input genotypes are PLINK files converted from IDAT via Illumina GenomeStudio. |
 | `analyses/`| `02_GWAS.R`                   | Genome-wide association analysis using imputed data and PLINK 2.0.         |
-| `analyses/`| `03_manhattan.R`              | Generation of Manhattan and QQ plots for GWAS results.                      |
+| `analyses/`| `03_manhattan.R`              | Generation of Manhattan for GWAS results.                      |
 | `analyses/`| `04_regional_plot.R`          | LocusZoom-style regional association plots for key loci.                    |
 | `analyses/`| `05_SNCA_conditional.R`       | Conditional association analyses at the SNCA locus and regional plots.     |
 | `analyses/`| `06_haplotype.R`              | Haplotype estimation and visualization for SNCA and LRRK2.                  |
